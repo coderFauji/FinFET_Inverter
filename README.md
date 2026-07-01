@@ -137,21 +137,21 @@ To compile smoothly, make sure the OpenVAF tool is downloaded from https://openv
 ### Voltage Transfer Characteristics
 
 <p align="center">
-  <img src="INV_P10N10/vtc.png" width="700">
+  <img src="INV_P10N10/vtc.png" width="1000">
 </p>
 
 
 ### Delay Analysis
 
 <p align="center">
-  <img src="INV_P10N10/delay.png" width="700">
+  <img src="INV_P10N10/delay.png" width="1000">
 </p>
 
 
 ### Drain Current
 
 <p align="center">
-  <img src="INV_P10N10/id.png" width="700">
+  <img src="INV_P10N10/id.png" width="1000">
 </p>
 
 
@@ -162,21 +162,21 @@ To compile smoothly, make sure the OpenVAF tool is downloaded from https://openv
 ### Voltage Transfer Characteristics
 
 <p align="center">
-  <img src="INV_P16N12/vtc.png" width="700">
+  <img src="INV_P16N12/vtc.png" width="1000">
 </p>
 
 
 ### Delay Analysis
 
 <p align="center">
-  <img src="INV_P16N12/delay.png" width="700">
+  <img src="INV_P16N12/delay.png" width="1000">
 </p>
 
 
 ### Drain Current
 
 <p align="center">
-  <img src="INV_P16N12/id.png" width="700">
+  <img src="INV_P16N12/id.png" width="1000">
 </p>
 
 
@@ -187,21 +187,21 @@ To compile smoothly, make sure the OpenVAF tool is downloaded from https://openv
 ### Voltage Transfer Characteristics
 
 <p align="center">
-  <img src="INV_P18N20/vtc.png" width="700">
+  <img src="INV_P18N20/vtc.png" width="1000">
 </p>
 
 
 ### Delay Analysis
 
 <p align="center">
-  <img src="INV_P18N20/delay.png" width="700">
+  <img src="INV_P18N20/delay.png" width="1000">
 </p>
 
 
 ### Drain Current
 
 <p align="center">
-  <img src="INV_P18N20/vtc.png" width="700">
+  <img src="INV_P18N20/vtc.png" width="1000">
 </p>
 
 

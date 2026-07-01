@@ -7,7 +7,7 @@
 For decades, the semiconductor industry relied on flat, two-dimensional transistors known as planar MOSFETs to power microchips. However, as manufacturing technology advanced below the 22-nanometer (nm) node, these conventional transistors hit a physical barrier known as "short-channel effects."In a traditional planar transistor, the gate controls the flow of electricity through a channel from a single flat surface above. As transistors shrank, the source and drain terminals became too close together. The gate lost its physical grip over the channel, allowing electricity to leak through even when the transistor was turned "off." This resulted in massive power waste, high battery drain, and excessive heat generation.To overcome this bottleneck and sustain Moore's Law, the industry transitioned to a three-dimensional architecture: the Fin Field-Effect Transistor (FinFET).
 
 <p align="center">
-  <img src="Images/The structure of FinFET is compared with the traditional structure of MOSFET.png" width="700">
+  <img src="Images/finfet_vs_mosfet.png" width="700">
 </p>
 
 ---
@@ -20,9 +20,7 @@ The defining feature of a FinFET is its thin, vertical silicon body that project
 - Elimination of Leakage Current: Because the vertical fin is extremely thin, no part of the channel is hidden far from the gate's influence. The gate can easily switch off the entire channel, shrinking idle power leakage.
 - Increased Effective Channel Width (\(W_{eff}\)): In electrical engineering, a wider channel means more current can flow, making the device faster. In a planar layout, making a channel wider requires taking up valuable horizontal space on the chip. In a FinFET, the effective width is increased vertically using the height of the fin. For a single fin, the formula is:
 
-\(
-W_{eff}=(2\times \text{Fin\ Height})+\text{Fin\ Width}
-\)
+\(W_{eff}=(2\times H_{fin})+W_{fin}\)
 
 Engineers can boost power simply by building taller fins or placing multiple fins side-by-side, saving physical space on the microchip.
 
@@ -52,14 +50,14 @@ Xschem is an open-source, graphic-driven schematic editor optimized for Very Lar
 
 ## How to install Xschem in ubuntu
 
-'''bash
+```bash
 git clone https://github.com/StefanSchippers/xschem.git xschem
 cd xschem
 ./configure 
 make 
 sudo make install 
 cd ..
-'''
+```
 ---
 
 ## 2.2 Ngspice 
@@ -75,7 +73,7 @@ To make these calculations possible, ngspice includes a built-in library filled 
 
 ## How to install Ngspice 
 
-'''bash
+```bash
 #Clone the ngspice source repository
 git clone https://git.code.sf.net/p/ngspice/ngspice ngspice_git
 #Move into the source directory
@@ -94,7 +92,7 @@ make
 sudo make install
 #Verify installation
 ngspice -v
-'''
+```
 ---
 
 ## 2.3 ASAP_7NM
@@ -123,31 +121,39 @@ To compile smoothly, make sure the OpenVAF tool is downloaded from https://openv
 
 ---
 
-# 📊 Characterization Results
+## SIMULATION RESULTS
 
-| PMOS | NMOS | Vth (V) | Id (A) | Power (W) | Delay (ps) | Gain | Frequency (GHz) |
-|------:|------:|---------:|---------:|---------:|----------:|------:|--------------:|
-| 10 | 10 | 0.345064 | 5.8599E-07 | 2.1317E-05 | 25.297 | 6.424 | 22.467 |
-| 16 | 12 | 0.337759 | 1.1718E-06 | 4.0497E-05 | 25.221 | 6.432 | 22.516 |
-| 18 | 20 | 0.364614 | 7.0231E-07 | 2.9181E-05 | 25.466 | 6.444 | 22.289 |
+|:----:|:-------------:|:-------------:|:----------------:|:-------------------:|:------------------:|:----------------:|:---------------------:|:----------------:|:-----------------:|
+| **S.No.** | **PMOS (nfin)** | **NMOS (nfin)** | **V<sub>TH</sub> (V)** | **I<sub>D</sub> (A)** | **Power (W)** | **Gain (A<sub>v</sub>)** | **g<sub>m,max</sub> (mS)** | **Delay (ps)** | **Frequency (GHz)** |
+| 1 | 10 | 10 | 0.345064 | 5.8599 × 10⁻⁷ | 2.1317 × 10⁻⁵ | 6.424 | 0.883 | 25.297 | 22.467 |
+| 2 | 16 | 12 | 0.364919 | 7.0337 × 10⁻⁷ | 2.9242 × 10⁻⁵ | 6.441 | 1.284 | 25.459 | 22.286 |
+| 3 | 18 | 20 | 0.337759 | 1.1719 × 10⁻⁶ | 4.0497 × 10⁻⁵ | 6.432 | 1.641 | 25.221 | 22.516 |
 
 ---
 
-# 📈 Simulation Results
 
 ## Configuration 1 (PMOS = 10, NMOS = 10)
 
 ### Voltage Transfer Characteristics
 
-![VTC](PMOS10_NMOS10/vtc.png)
+<p align="center">
+  <img src="INV_P10N10/vtc.png" width="700">
+</p>
+
 
 ### Delay Analysis
 
-![Delay](PMOS10_NMOS10/delay.png)
+<p align="center">
+  <img src="INV_P10N10/delay.png" width="700">
+</p>
+
 
 ### Drain Current
 
-![Drain Current](PMOS10_NMOS10/id.png)
+<p align="center">
+  <img src="INV_P10N10/id.png" width="700">
+</p>
+
 
 ---
 
@@ -155,15 +161,24 @@ To compile smoothly, make sure the OpenVAF tool is downloaded from https://openv
 
 ### Voltage Transfer Characteristics
 
-![VTC](PMOS16_NMOS12/vtc.png)
+<p align="center">
+  <img src="INV_P16N12/vtc.png" width="700">
+</p>
+
 
 ### Delay Analysis
 
-![Delay](PMOS16_NMOS12/delay.png)
+<p align="center">
+  <img src="INV_P16N12/delay.png" width="700">
+</p>
+
 
 ### Drain Current
 
-![Drain Current](PMOS16_NMOS12/id.png)
+<p align="center">
+  <img src="INV_P16N12/id.png" width="700">
+</p>
+
 
 ---
 
@@ -171,33 +186,27 @@ To compile smoothly, make sure the OpenVAF tool is downloaded from https://openv
 
 ### Voltage Transfer Characteristics
 
-![VTC](PMOS18_NMOS20/vtc.png)
+<p align="center">
+  <img src="INV_P18N20/vtc.png" width="700">
+</p>
+
 
 ### Delay Analysis
 
-![Delay](PMOS18_NMOS20/delay.png)
+<p align="center">
+  <img src="INV_P18N20/delay.png" width="700">
+</p>
+
 
 ### Drain Current
 
-![Drain Current](PMOS18_NMOS20/id.png)
+<p align="center">
+  <img src="INV_P18N20/vtc.png" width="700">
+</p>
+
 
 ---
 
-# 🔍 Discussion
-
-The electrical performance of the inverter changes with transistor sizing. Increasing the number of fins enhances the drive strength, resulting in higher drain current and slightly improved voltage gain. Although the propagation delay remains nearly constant for the configurations studied, the increase in transistor width also leads to higher dynamic power consumption.
-
-These observations demonstrate the trade-off between performance and power in FinFET-based CMOS circuit design.
-
----
-
-# ✅ Conclusion
-
-A CMOS inverter was successfully designed and characterized using the ASAP7 7nm FinFET PDK. Three different PMOS/NMOS fin configurations were simulated and compared using Xschem and ngspice.
-
-The extracted results show that transistor sizing significantly influences the inverter's electrical characteristics, particularly drain current, power consumption, threshold voltage, and gain. The study provides useful insight into sizing optimization for FinFET-based digital circuits and serves as a foundation for more complex standard-cell and memory circuit design.
-
----
 
 # 📚 References
 
@@ -208,7 +217,7 @@ The extracted results show that transistor sizing significantly influences the i
 
 ---
 
-# 👨‍💻 Author
+## Author
 
 **Param Sharma**
 

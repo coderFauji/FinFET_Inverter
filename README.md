@@ -876,21 +876,3 @@ pre_osdi /home/param-sharma/project/vsd-7nm/asap_7nm_Xschem/bsimcmg.osdi
 
 ---
 
-
-# 📚 References
-
-1. ASAP7 Predictive Process Design Kit (PDK)
-2. BSIM-CMG Compact Model Documentation
-3. Xschem User Manual
-4. ngspice User Manual
-
----
-
-## Author
-
-**Param Sharma**
-
-B.Tech Electronics and Communication Engineering
-
-Manipal University Jaipur
-
